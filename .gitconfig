@@ -1,0 +1,38 @@
+[user]
+  name = hrfmmymt
+  email = hrfmmymt@gmail.com
+[color]
+  ui = auto
+  status = auto
+  diff = auto
+  branch = auto
+  interactive = auto
+  grep = auto
+[core]
+	excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
+  editor = vim
+  # Unicode
+  precomposeunicode = true
+  quotepath = true
+[alias]
+  br = branch
+  co = checkout
+  pl = pull
+  fe = fetch
+  st = status
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	conflicts = !git ls-files -u | cut -f 2 | sort -u
+[push]
+  default = upstream
+[credential]
+  helper = osxkeychain
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.4/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[fetch]
+	prune = true
