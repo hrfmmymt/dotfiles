@@ -204,6 +204,11 @@ set statusline+=[%p%%]
 set whichwrap=b,s,<,>,[,]
 "マウスポインター、スクロール
 set mouse=a
+"solarized
+syntax enable
+set background=light
+let g:solarized_termcolors=256
+colorscheme solarized
  
  
 if has('vim_starting')
