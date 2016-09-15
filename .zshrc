@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/hirofumimiyamoto/.oh-my-zsh
+export ZSH=/Users/hrfmmymt/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -252,6 +252,8 @@ elif which putclip >/dev/null 2>&1 ; then
     alias -g C='| putclip'
 fi
 
+alias vi="vim"
+
 ########################################
 # OS 別の設定
 case ${OSTYPE} in
@@ -269,3 +271,20 @@ esac
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# rbenv
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init - zsh)"
+
+# brew-cask
+export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
+
+# pyenv
+export PYENV_ROOT=${HOME}/.pyenv
+if [ -d "${PYENV_ROOT}" ]; then
+    export PATH=${PYENV_ROOT}/bin:$PATH
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+# added by travis gem
+[ -f /Users/hrfmmymt/.travis/travis.sh ] && source /Users/hrfmmymt/.travis/travis.sh
