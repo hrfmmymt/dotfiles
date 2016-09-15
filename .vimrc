@@ -205,35 +205,33 @@ set whichwrap=b,s,<,>,[,]
 "マウスポインター、スクロール
 set mouse=a
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#begin(expand('~/.vim/bundle/'))
+let s:dein_dir = expand('~/.vim/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+if &compatible
+  set nocompatible
 endif
-" originalrepos on github
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'VimClojure'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'scrooloose/syntastic'
-""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'taichouchou2/surround.vim'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'tell-k/vim-browsereload-mac'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'taichouchou2/html5.vim'
-NeoBundle 'taichouchou2/vim-javascript'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'nathanaelkane/vim-indent-guides'
- 
-filetype plugin indent on     " required!
-filetype indent on
-syntax on
- 
+
+if !isdirectory(s:dein_repo_dir)
+  execute '!git clone git@github.com:Shougo/dein.vim.git' s:dein_repo_dir
+endif
+
+execute 'set runtimepath^=' . s:dein_repo_dir
+
+call dein#begin(s:dein_dir)
+
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/neocomplete.vim')
+  :
+
+call dein#end()
+
+if dein#check_install()
+  call dein#install()
+endif
+
+filetype plugin indent on
+
 "----------------------------------------
 " Emmet
 "----------------------------------------
