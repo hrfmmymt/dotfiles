@@ -1,4 +1,6 @@
-# Atom apm star
+# Atom
+
+## apm star
 
 - refs: http://qiita.com/st44100/items/e9202cc9c8fb361e1175
 - Atom account page: https://atom.io/account
