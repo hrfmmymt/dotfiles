@@ -2,131 +2,133 @@
 "タイトルをバッファ名に変更しない
 set notitle
 set shortmess+=I
- 
+
 "ターミナル接続を高速にする
 set ttyfast
- 
+
 "ターミナルで256色表示を使う
 set t_Co=256
- 
+
 "フォールド設定(未使用)
 "set foldmethod=indent
 set foldmethod=manual
 "set foldopen=all
 "set foldclose=all
- 
+
 "VIM互換にしない
 set nocompatible
- 
+
 "複数ファイルの編集を可能にする
 set hidden
- 
+
 "内容が変更されたら自動的に再読み込み
 set autoread
- 
+
 "Swapを作るまでの時間m秒
 set updatetime=0
- 
+
 "Unicodeで行末が変になる問題を解決
 set ambiwidth=double
- 
+
 "行間をでシームレスに移動する
 "set whichwrap+=h,l,<,>,[,],b,s
- 
+
 "カーソルを常に画面の中央に表示させる
 "set scrolloff=999
- 
+
 "バックスペースキーで行頭を削除する
 set backspace=indent,eol,start
- 
+
 "カッコを閉じたとき対応するカッコに一時的に移動
 set nostartofline
- 
+
 "C-X,C-Aを強制的に10進数認識させる
 set nrformats=
 "set nrformats=alpha
- 
+
 "titleを変更しない
 set notitle
- 
+
 "コマンドラインでTABで補完できるようにする
 set wildchar=<C-Z>
- 
+
 "改行後に「Backspace」キーを押すと上行末尾の文字を1文字消す
 set backspace=2
- 
+
 "C-vの矩形選択で行末より後ろもカーソルを置ける
 set virtualedit=block
- 
+
 "コマンド、検索パターンを50まで保存
 set history=50
- 
+
 "履歴に保存する各種設定
 set viminfo='100,/50,%,<1000,f50,s100,:100,c,h,!
- 
+
 "バックアップを作成しない
 set nobackup
- 
+
 "-------Search--------
 "インクリメンタルサーチを有効にする
 set incsearch
- 
+
 "大文字小文字を区別しない
 set ignorecase
- 
+
 "大文字で検索されたら対象を大文字限定にする
 set smartcase
- 
+
 "行末まで検索したら行頭に戻る
 set wrapscan
- 
+
 "-------Format--------
 "自動インデントを有効化する
 set smartindent
 set autoindent
- 
+
 "フォーマット揃えをコメント以外有効にする
 set formatoptions-=c
- 
+
 "括弧の対応をハイライト
 set showmatch
- 
+
 "行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする。
 set smarttab
- 
+
 "ターミナル上からの張り付けを許可
 "set paste
- 
+
 "http://peace-pipe.blogspot.com/2006/05/vimrc-vim.html
 set tabstop=2
 set shiftwidth=2
 set softtabstop=0
-set noexpandtab
- 
+set expandtab
+set autoindent
+set smartindent
+
 "-------Look&Feel-----
 "TAB,EOFなどを可視化する
 set list
 set listchars=tab:>-,extends:<,trail:-,eol:↲
- 
+
 "検索結果をハイライトする
 set hlsearch
- 
+
 "ルーラー,行番号を表示
 set ruler
 set number
- 
+
 "コマンドラインの高さ
 set cmdheight=1
- 
+
 "マクロなどの途中経過を描写しない
 set lazyredraw
- 
+
 "カーソルラインを表示する
 set cursorline
- 
+
 "ウインドウタイトルを設定する
 set title
- 
+
 "自動文字数カウント
 augroup WordCount
     autocmd!
@@ -159,7 +161,7 @@ function! WordCount(...)
     let v:statusmsg = s:saved_status
     return s:WordCountStr
 endfunction
- 
+
 "ステータスラインにコマンドを表示
 set showcmd
 "ステータスラインを常に表示
@@ -255,7 +257,7 @@ let g:user_emmet_mode = 'iv'
     autocmd!
     autocmd FileType * let g:user_emmet_settings.indentation = '               '[:&tabstop]
   augroup END
- 
+
 "----------------------------------------
 " open-browser
 "----------------------------------------
@@ -264,7 +266,7 @@ nmap <Leader>o <Plug>(openbrowser-open)
 vmap <Leader>o <Plug>(openbrowser-open)
 " ググる
 nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
- 
+
 "------------------------------------
 " sass
 "------------------------------------
@@ -274,11 +276,11 @@ let g:sass_compile_cdloop = 5
 let g:sass_compile_cssdir = ['css', 'stylesheet']
 let g:sass_compile_file = ['scss', 'sass']
 let g:sass_started_dirs = []
- 
+
 autocmd FileType less,sass  setlocal sw=2 sts=2 ts=2 et
 au! BufWritePost * SassCompile
 "}}}
- 
+
 "------------------------------------
 " coffee-script
 "------------------------------------
@@ -288,7 +290,7 @@ au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 " 保存時にコンパイル
 autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
- 
+
 "------------------------------------
 " indent_guides
 "------------------------------------
@@ -299,7 +301,7 @@ let g:indent_guides_enable_on_vim_startup=0
 let g:indent_guides_color_change_percent=20
 let g:indent_guides_guide_size=1
 let g:indent_guides_space_guides=1
- 
+
 hi IndentGuidesOdd  ctermbg=235
 hi IndentGuidesEven ctermbg=237
 au FileType coffee,ruby,javascript,python IndentGuidesEnable

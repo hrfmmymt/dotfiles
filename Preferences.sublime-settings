@@ -1,0 +1,21 @@
+{
+	"alwayshighlight_pattern": "[　０-９Ａ-Ｚａ-ｚ]",
+	"auto_find_in_selection": true,
+	"color_scheme": "Packages/User/SublimeLinter/Solarized (Light) (SL).tmTheme",
+	"default_line_ending": "unix",
+	"draw_white_space": "all",
+	"font_face": "Ricty",
+	"font_size": 16.0,
+	"fullwhitespace_viewable": true,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"scroll_past_end": true,
+	"show_definitions": false,
+	"tab_size": 2,
+	"theme": "Flatland Dark.sublime-theme",
+	"translate_tabs_to_spaces": true
+}
