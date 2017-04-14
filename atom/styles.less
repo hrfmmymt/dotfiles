@@ -1,0 +1,66 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+
+
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+
+// style the background color of the tree view
+.tree-view {
+  // background-color: whitesmoke;
+  line-height: 24px !important;
+}
+
+// style the background and foreground colors on the atom-text-editor-element itself
+atom-text-editor {
+  // color: white;
+  // background-color: hsl(180, 24%, 12%);
+}
+
+// To style other content in the text editor's shadow DOM, use the ::shadow expression
+atom-text-editor::shadow .cursor {
+  // border-color: red;
+}
+
+atom-text-editor::shadow {
+    // 縦線
+    .wrap-guide {
+      visibility: hidden;
+    }
+
+    // キャレット行
+    .line.highlight-line {
+      background: rgba(0, 0, 0, .07) !important;
+    }
+}
+
+// selected area
+.editor .selection .region {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+atom-text-editor .gutter,
+atom-text-editor::shadow .gutter {
+  background: transparent;
+}
+
+atom-text-editor,
+atom-text-editor::shadow {
+  .scroll-view {
+    padding-left: .1em;
+    box-sizing: border-box;
+  }
+  .gutter + .scroll-view {
+    padding-left: 0;
+  }
+}

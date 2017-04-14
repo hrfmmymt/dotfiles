@@ -1,0 +1,42 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AutoFileName",
+		"Babel",
+		"Babel Snippets",
+		"Better CoffeeScript",
+		"CakePHP (Native)",
+		"Color Highlighter",
+		"Compass",
+		"Cssnext",
+		"Emmet",
+		"InputSequence",
+		"JavaScriptNext - ES6 Syntax",
+		"jQuery",
+		"JSX",
+		"LESS",
+		"OmniMarkupPreviewer",
+		"Package Control",
+		"ProjectManager",
+		"ReactJS",
+		"Sass",
+		"SCSS",
+		"SublimeLinter",
+		"SublimeLinter-contrib-sass-lint",
+		"SublimeLinter-contrib-scss-lint",
+		"SublimeLinter-contrib-stylelint",
+		"SublimeLinter-csslint",
+		"Syntax Highlighting for PostCSS",
+		"Terminal",
+		"Theme - Flatland",
+		"TypeScript"
+	],
+	"repositories":
+	[
+		"https://github.com/kazu1107/InputSequence.git"
+	]
+}
