@@ -1,5 +1,6 @@
 # Homebrew
-set -U fish_user_paths /usr/local/bin $fish_user_paths
+set -x PATH /usr/local/bin /usr/local/sbin $PATH
 
-# nodebrew
-set -x PATH $HOME/.nodebrew/current/bin $PATH
+#pyenv
+status --is-interactive; and . (pyenv init -| psub)
+set -x PATH $HOME/.pyenv/shims $PATH 
