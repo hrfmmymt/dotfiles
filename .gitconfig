@@ -23,7 +23,23 @@
   st = status
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	conflicts = !git ls-files -u | cut -f 2 | sort -u
+  conflicts = !git ls-files -u | cut -f 2 | sort -u
+  al = "!f() {\
+    if [ \"$#\" -eq 0 ];then \
+      git config --name-only --get-regexp ^alias\\.|cut -d"." -f2|column;\
+      return;\
+    fi;\
+    ret=0;\
+    for a in \"$@\";do \
+      git config --get-regexp ^alias\\.\"$a\"$;\
+      rettmp=$?;\
+      if [ $rettmp != 0 ];then \
+        ret=$rettmp;\
+        printf \"\\e[31malias.$a is not defined as alias\\n\\e[m\";\
+      fi;\
+    done;\
+    return $ret;\
+  };f"
 [push]
   default = upstream
 [credential]
