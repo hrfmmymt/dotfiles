@@ -1,6 +1,3 @@
-[user]
-  name = hrfmmymt
-  email = hrfmmymt@gmail.com
 [color]
   ui = auto
   status = auto
@@ -9,7 +6,7 @@
   interactive = auto
   grep = auto
 [core]
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
   editor = vim
   # Unicode
@@ -45,10 +42,12 @@
 [credential]
   helper = osxkeychain
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
 [mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.4/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.4/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 [fetch]
-	prune = true
+  prune = true
+[user]
+  useConfigOnly = true
