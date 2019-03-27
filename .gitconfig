@@ -12,6 +12,7 @@
   # Unicode
   precomposeunicode = true
   quotepath = true
+  commentchar = ";"
 [alias]
   br = branch
   co = checkout
