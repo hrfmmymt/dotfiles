@@ -38,6 +38,7 @@
     done;\
     return $ret;\
   };f"
+  sw = switch
 [push]
   default = upstream
 [credential]
