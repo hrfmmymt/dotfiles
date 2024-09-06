@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "name": "private",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "[markdown]": {
+      "editor.formatOnSave": false
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
